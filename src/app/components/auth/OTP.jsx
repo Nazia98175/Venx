@@ -1,6 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
+import CommonLogo from "../common/CommonLogo";
+import CommonInput from "../common/CommonInput";
+import CommonButton from "../common/CommonButton";
 
 const OTP = () => {
   const router = useRouter();
@@ -44,56 +47,56 @@ const OTP = () => {
     inputRefs.current[0]?.focus();
   };
   return (
-    <div className="max-w-full min-h-screen w-full flex justify-center max-h-fit bg-primary pb- lg:pb-10 p-5 lg:p-40 font-inter">
-      <div className="bg-white flex flex-col max-w-full px-2 lg:px-10 py-10 lg:py-20 justify-center rounded-2xl shadow-lg w-full">
-        {/* Logo */}
-        <div className="flex justify-center mb-6">
-          <div className="bg-white absolute bottom-42.5 lg:top-24 lg:bottom-auto text-black p-4 rounded-full shadow-sm">
-            <img src="/logo.png" alt="logo" className="" />
+    <div className="max-w-full">
+      <div className="h-[810px] bg-primary flex justify-center items-center min-h-screen w-full font-inter">
+        <div className="bg-white p-10 w-[489px] h-[394px] flex flex-col justify-center  rounded-2xl shadow-lg relative">
+          {/* Logo */}
+          <CommonLogo />
+          <div className="h-[267px] pt-10">
+            <h2 className="text-center text-2xl lg:text-3xl font-semibold text-primary mb-4 font-inter">
+              Enter OTP Code
+            </h2>
+
+            {/* Form */}
+            <div className="flex justify-center space-x-2 mb-4">
+              {otp.map((value, index) => (
+                <CommonInput
+                  key={index}
+                  ref={(el) => (inputRefs.current[index] = el)}
+                  type="text"
+                  name="OTP"
+                  value={value}
+                  required={true}
+                  maxLength={1}
+                  onChange={(e) => handleChange(index, e.target.value)}
+                  onKeyDown={(e) => handleKeyDown(index, e)}
+                  className="w-12 h-12 text-center text-lg font-bold border border-quatanery rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              ))}
+            </div>
+
+            {/* Verify Button */}
+
+            <CommonButton
+              onClick={() => router.push("/resetpassword")}
+              text="Submit"
+            />
+
+            {/* Resend OTP */}
+            <p className="text-secondary mt-4 text-center">
+              Resend OTP in{" "}
+              <span className="font-bold text-primary">{timeLeft}s</span>
+            </p>
+            {timeLeft === 0 && (
+              <button
+                onClick={resendOtp}
+                className="text-primary font-semibold mt-2 text-center"
+              >
+                Resend OTP
+              </button>
+            )}
           </div>
         </div>
-
-        <h2 className="text-center text-2xl lg:text-3xl font-semibold text-primary mb-4 font-inter">
-          Enter OTP Code
-        </h2>
-
-        {/* Form */}
-        <div className="flex justify-center space-x-2 mb-4">
-          {otp.map((value, index) => (
-            <input
-              key={index}
-              ref={(el) => (inputRefs.current[index] = el)}
-              type="text"
-              value={value}
-              maxLength={1}
-              onChange={(e) => handleChange(index, e.target.value)}
-              onKeyDown={(e) => handleKeyDown(index, e)}
-              className="w-12 h-12 text-center text-lg font-bold border border-quatanery rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-          ))}
-        </div>
-
-        {/* Verify Button */}
-        <button
-          onClick={() => router.push("/resetpassword")}
-          className="bg-primary text-tertiary py-3 px-6 rounded-full font-semibold hover:bg-white hover:text-primary hover:border-primary border transition cursor-pointer w-full"
-        >
-          Verify
-        </button>
-
-        {/* Resend OTP */}
-        <p className="text-secondary mt-4 text-center">
-          Resend OTP in{" "}
-          <span className="font-bold text-primary">{timeLeft}s</span>
-        </p>
-        {timeLeft === 0 && (
-          <button
-            onClick={resendOtp}
-            className="text-primary font-semibold mt-2 text-center"
-          >
-            Resend OTP
-          </button>
-        )}
       </div>
     </div>
   );

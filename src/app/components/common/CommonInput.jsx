@@ -2,7 +2,16 @@
 
 import React, { useState } from "react";
 
-const CommonInput = ({ type, name, value, onChange, required }) => {
+const CommonInput = ({
+  type,
+  name,
+  value,
+  onChange,
+  required,
+  maxLength,
+  onKeyDown,
+  ref,
+}) => {
   return (
     <input
       type={type}
@@ -11,6 +20,9 @@ const CommonInput = ({ type, name, value, onChange, required }) => {
       onChange={onChange}
       className="input-style"
       required={required}
+      maxLength={maxLength}
+      onKeyDown={onKeyDown}
+      ref={ref}
     />
   );
 };

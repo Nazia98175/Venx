@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
-import CommonInput from "../common/CommonInput";
+import { useRef, useState } from "react";
 import CommonButton from "../common/CommonButton";
+import CommonInput from "../common/CommonInput";
 import CommonLogo from "../common/CommonLogo";
-import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -59,6 +58,7 @@ const Login = () => {
                   value={formData.username}
                   onChange={handleChange}
                   required={true}
+                  className="w-full px-4 py-2 border border-quatanery rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
 
@@ -80,6 +80,7 @@ const Login = () => {
                     value={formData.password}
                     onChange={handleChange}
                     required={true}
+                    className="w-full px-4 py-2 border border-quatanery rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                   <button
                     type="button"
@@ -111,7 +112,10 @@ const Login = () => {
               {/* Signup Link */}
               <p className="text-center text-secondary text-sm lg:text-base mt-3">
                 Don’t have an account?{" "}
-                <Link href="/otp" className="text-primary font-medium">
+                <Link
+                  href="/createaccount"
+                  className="text-primary font-medium"
+                >
                   Create an account
                 </Link>
               </p>
