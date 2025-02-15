@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
+import CommonInput from "../common/CommonInput";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -30,18 +31,26 @@ const Login = () => {
     e.preventDefault();
     console.log("Login Data:", formData);
   };
+
+  const usernameInputDetails = {
+    type: "text",
+    name: "username",
+  };
+  const passwordInputDetails = {
+    type: "password",
+    name: "password",
+  };
   return (
     <div className="max-w-full">
-      
       <div className="h-[810px] bg-primary flex justify-center items-center min-h-screen w-full font-inter">
-        <div className="bg-tertiary p-10 w-[489px] h-[515px] flex flex-col justify-center  rounded-2xl shadow-lg ">
+        <div className="bg-white p-10 w-[489px] h-[515px] flex flex-col justify-center  rounded-2xl shadow-lg relative">
           {/* Logo */}
-          <div className="flex relative justify-center items-start -top-52  mb-6">
-            <div className="bg-tertiary absolute -bottom-3 lg:top-24 lg:bottom-auto text-black p-4 rounded-full shadow-sm">
+          <div className="flex absolute justify-center items-start -top-10 left-1/2 -translate-x-1/2 mb-6">
+            <div className="bg-white  text-black p-4 rounded-full shadow-sm">
               <img src="/logo.png" alt="logo" className="" />
             </div>
           </div>
-          <div className="w-[409px] h-[389px] ">
+          <div className="h-[389px] pt-10">
             <h2 className="text-center text-2xl lg:text-3xl font-semibold text-primary mb-4 font-inter">
               Welcome back!
             </h2>
@@ -53,13 +62,12 @@ const Login = () => {
                 <label className="text-secondary font-normal text-base lg:text-lg font-inter">
                   User Name
                 </label>
-                <input
+                <CommonInput
                   type="text"
                   name="username"
                   value={formData.username}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-quatanery rounded-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                  required
+                  required={true}
                 />
               </div>
 
@@ -75,13 +83,12 @@ const Login = () => {
                   </Link>
                 </label>
                 <div className="relative">
-                  <input
+                  <CommonInput
                     type={showPassword ? "text" : "password"}
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border-quatanery border rounded-sm focus:outline-none focus:ring-2 focus:ring-primary pr-10"
-                    required
+                    required={true}
                   />
                   <button
                     type="button"
@@ -110,7 +117,7 @@ const Login = () => {
               {/* Login Button */}
               <button
                 type="submit"
-                className="w-full bg-primary text-tertiary py-3 px-6 rounded-full hover:bg-tertiary hover:text-primary hover:border-primary border transition cursor-pointer"
+                className="w-full bg-primary text-white py-3 px-6 rounded-full hover:bg-white hover:text-primary hover:border-primary border transition cursor-pointer"
               >
                 Log in
               </button>

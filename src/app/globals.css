@@ -5,10 +5,15 @@
 @tailwind utilities;
 @import "tailwindcss";
 
+@layer base {
+  .input-style {
+    @apply w-full px-4 py-2 border border-quatanery rounded-sm focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+}
+
 @theme {
   ---font-inter: "Inter", "serif";
   --color-primary: #234467;
   --color-secondary: #3b3b3b;
-  --color-tertiary: #ffffff;
   --color-quatanery: #c4c4c4;
 }

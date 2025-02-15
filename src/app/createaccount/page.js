@@ -1,7 +1,7 @@
 import React from "react";
-import CreateAccount from "./CreateAccount";
+import CreateAccount from "../components/auth/CreateAccount";
 
-const createaccount = () => {
+const CreateAccountPage = () => {
   return (
     <>
       <div className="">
@@ -909,4 +909,4 @@ const createaccount = () => {
   );
 };
 
-export default createaccount;
+export default CreateAccountPage;

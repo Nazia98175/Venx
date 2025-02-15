@@ -1,5 +1,5 @@
 import React from "react";
-import OTP from "./OTP";
+import OTP from "../components/auth/OTP";
 
 const otp = () => {
   return (
