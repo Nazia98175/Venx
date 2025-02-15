@@ -42,16 +42,16 @@ const OTP = () => {
     inputRefs.current[0]?.focus();
   };
   return (
-    <div className="max-w-full min-h-screen w-full flex justify-center bg-primary pb-10 p-40 font-inter">
-      <div className="bg-tertiary flex flex-col max-h-fit px-24 py-20 rounded-2xl shadow-lg w-full">
+    <div className="max-w-full min-h-screen w-full flex justify-center max-h-fit bg-primary pb- lg:pb-10 p-5 lg:p-40 font-inter">
+      <div className="bg-tertiary flex flex-col max-w-full px-2 lg:px-10 py-10 lg:py-20 justify-center rounded-2xl shadow-lg w-full">
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <div className="bg-tertiary absolute top-24 text-black p-4 rounded-full shadow-sm">
+          <div className="bg-tertiary absolute bottom-42.5 lg:top-24 lg:bottom-auto text-black p-4 rounded-full shadow-sm">
             <img src="/logo.png" alt="logo" className="" />
           </div>
         </div>
 
-        <h2 className="text-center text-3xl font-semibold text-primary mb-4 font-inter">
+        <h2 className="text-center text-2xl lg:text-3xl font-semibold text-primary mb-4 font-inter">
           Enter OTP Code
         </h2>
 

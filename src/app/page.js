@@ -1,12 +1,11 @@
-import Login from "./login/Login";
-import OTP from "./otp/OTP";
+import Login from "../auth/loginpage/Login";
 
 export default function Home() {
   return (
     <>
       <div className="">
-        <div className="flex min-h-screen items-center justify-between bg-tertiary">
-          <div className="max-w-full w-full items-center flex justify-center">
+        <div className=" grid lg:grid-cols-2 min-h-screen bg-tertiary">
+          <div className=" items-center max-w-full min-h-screen flex justify-center">
             <svg
               width="546"
               height="546"
