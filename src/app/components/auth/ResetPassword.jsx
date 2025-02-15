@@ -19,10 +19,10 @@ const ResetPassword = () => {
   };
   return (
     <div className="max-w-full min-h-screen w-full flex justify-center bg-primary pb-10 p-40 font-inter">
-      <div className="bg-tertiary flex flex-col max-h-fit px-24 py-20 rounded-2xl shadow-lg w-full">
+      <div className="bg-white flex flex-col max-h-fit px-24 py-20 rounded-2xl shadow-lg w-full">
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <div className="bg-tertiary absolute top-24 text-black p-4 rounded-full shadow-sm">
+          <div className="bg-white absolute top-24 text-black p-4 rounded-full shadow-sm">
             <img src="/logo.png" alt="logo" className="" />
           </div>
         </div>
@@ -78,7 +78,7 @@ const ResetPassword = () => {
           {/* Login Button */}
           <button
             type="submit"
-            className="w-full bg-primary text-white py-3 px-6 rounded-full hover:bg-tertiary hover:text-primary hover:border-primary border transition cursor-pointer"
+            className="w-full bg-primary text-white py-3 px-6 rounded-full hover:bg-white hover:text-primary hover:border-primary border transition cursor-pointer"
           >
             Submit
           </button>

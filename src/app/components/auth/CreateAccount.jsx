@@ -32,10 +32,10 @@ const CreateAccount = () => {
   };
   return (
     <div className="max-w-full min-h-screen w-full flex justify-center bg-primary pb-10 p-40 font-inter">
-      <div className="bg-tertiary flex flex-col max-h-fit px-16 py-20 rounded-2xl shadow-lg w-full">
+      <div className="bg-white flex flex-col max-h-fit px-16 py-20 rounded-2xl shadow-lg w-full">
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <div className="bg-tertiary absolute top-24 text-black p-4 rounded-full shadow-sm">
+          <div className="bg-white absolute top-24 text-black p-4 rounded-full shadow-sm">
             <img src="/logo.png" alt="logo" className="" />
           </div>
         </div>
@@ -158,7 +158,7 @@ const CreateAccount = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="bg-primary text-tertiary py-3 px-6 rounded-full font-semibold hover:bg-tertiary hover:text-primary hover:border-primary border transition cursor-pointer w-full"
+            className="bg-primary text-tertiary py-3 px-6 rounded-full font-semibold hover:bg-white hover:text-primary hover:border-primary border transition cursor-pointer w-full"
           >
             Sign Up
           </button>

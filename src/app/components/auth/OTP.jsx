@@ -1,7 +1,9 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 const OTP = () => {
+  const router = useRouter();
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [timeLeft, setTimeLeft] = useState(60); // 60-second countdown
   const inputRefs = useRef([]);
@@ -43,10 +45,10 @@ const OTP = () => {
   };
   return (
     <div className="max-w-full min-h-screen w-full flex justify-center max-h-fit bg-primary pb- lg:pb-10 p-5 lg:p-40 font-inter">
-      <div className="bg-tertiary flex flex-col max-w-full px-2 lg:px-10 py-10 lg:py-20 justify-center rounded-2xl shadow-lg w-full">
+      <div className="bg-white flex flex-col max-w-full px-2 lg:px-10 py-10 lg:py-20 justify-center rounded-2xl shadow-lg w-full">
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <div className="bg-tertiary absolute bottom-42.5 lg:top-24 lg:bottom-auto text-black p-4 rounded-full shadow-sm">
+          <div className="bg-white absolute bottom-42.5 lg:top-24 lg:bottom-auto text-black p-4 rounded-full shadow-sm">
             <img src="/logo.png" alt="logo" className="" />
           </div>
         </div>
@@ -72,7 +74,10 @@ const OTP = () => {
         </div>
 
         {/* Verify Button */}
-        <button className="bg-primary text-tertiary py-3 px-6 rounded-full font-semibold hover:bg-tertiary hover:text-primary hover:border-primary border transition cursor-pointer w-full">
+        <button
+          onClick={() => router.push("/resetpassword")}
+          className="bg-primary text-tertiary py-3 px-6 rounded-full font-semibold hover:bg-white hover:text-primary hover:border-primary border transition cursor-pointer w-full"
+        >
           Verify
         </button>
 

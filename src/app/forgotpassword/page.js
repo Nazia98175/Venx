@@ -5,7 +5,7 @@ const forgotpassword = () => {
   return (
     <>
       <div className="">
-        <div className="flex flex-col lg:flex-row min-h-screen items-center justify-between bg-tertiary">
+        <div className="flex flex-col lg:flex-row min-h-screen items-center justify-between bg-white">
           <div className="max-w-full w-full items-center flex justify-center">
             <svg
               width="546"

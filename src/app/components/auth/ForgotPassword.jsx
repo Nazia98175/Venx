@@ -1,9 +1,11 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const ForgotPassword = () => {
+  const router = useRouter();
   const [input, setInput] = useState("");
-  const [otpSent, setOtpSent] = useState(false);
 
   // Handle input change
   const handleChange = (e) => {
@@ -13,16 +15,15 @@ const ForgotPassword = () => {
   // Simulate OTP send
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (input) {
-      setOtpSent(true);
-    }
+    toast.success(`OTP sent to XXXXXX${input.slice(-4)}`);
+    router.push("/otp");
   };
   return (
     <div className="max-w-full min-h-screen w-full flex justify-center max-h-fit bg-primary pb- lg:pb-10 p-5 lg:p-40 font-inter">
-      <div className="bg-tertiary flex flex-col max-w-full px-2 lg:px-10 py-10 lg:py-20 justify-center rounded-2xl shadow-lg w-full">
+      <div className="bg-white flex flex-col max-w-full px-2 lg:px-10 py-10 lg:py-20 justify-center rounded-2xl shadow-lg w-full">
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <div className="bg-tertiary absolute -bottom-3 lg:top-24 lg:bottom-auto text-black p-4 rounded-full shadow-sm">
+          <div className="bg-white absolute -bottom-3 lg:top-24 lg:bottom-auto text-black p-4 rounded-full shadow-sm">
             <img src="/logo.png" alt="logo" className="" />
           </div>
         </div>
@@ -47,17 +48,11 @@ const ForgotPassword = () => {
               required
             />
           </div>
-          {otpSent && (
-            <p className="text-secondary text-sm">
-              OTP sent to XXXXXX{input.slice(-4)}
-            </p>
-          )}
-          {/* Password */}
 
           {/* Login Button */}
           <button
             type="submit"
-            className="w-full bg-primary text-white py-3 px-6 rounded-full hover:bg-tertiary hover:text-primary hover:border-primary border transition cursor-pointer"
+            className="w-full bg-primary text-white py-3 px-6 rounded-full hover:bg-white hover:text-primary hover:border-primary border transition cursor-pointer"
           >
             Submit
           </button>

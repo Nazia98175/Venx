@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <div className="">
-        <div className=" grid lg:grid-cols-2 min-h-screen bg-tertiary">
+        <div className=" grid lg:grid-cols-2 min-h-screen bg-white">
           <div className=" items-center max-w-full min-h-screen flex justify-center">
             <svg
               width="546"

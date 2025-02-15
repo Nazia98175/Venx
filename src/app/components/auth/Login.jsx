@@ -3,6 +3,9 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import CommonInput from "../common/CommonInput";
+import CommonButton from "../common/CommonButton";
+import CommonLogo from "../common/CommonLogo";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -32,24 +35,12 @@ const Login = () => {
     console.log("Login Data:", formData);
   };
 
-  const usernameInputDetails = {
-    type: "text",
-    name: "username",
-  };
-  const passwordInputDetails = {
-    type: "password",
-    name: "password",
-  };
   return (
     <div className="max-w-full">
       <div className="h-[810px] bg-primary flex justify-center items-center min-h-screen w-full font-inter">
         <div className="bg-white p-10 w-[489px] h-[515px] flex flex-col justify-center  rounded-2xl shadow-lg relative">
           {/* Logo */}
-          <div className="flex absolute justify-center items-start -top-10 left-1/2 -translate-x-1/2 mb-6">
-            <div className="bg-white  text-black p-4 rounded-full shadow-sm">
-              <img src="/logo.png" alt="logo" className="" />
-            </div>
-          </div>
+          <CommonLogo />
           <div className="h-[389px] pt-10">
             <h2 className="text-center text-2xl lg:text-3xl font-semibold text-primary mb-4 font-inter">
               Welcome back!
@@ -115,12 +106,7 @@ const Login = () => {
               </div>
 
               {/* Login Button */}
-              <button
-                type="submit"
-                className="w-full bg-primary text-white py-3 px-6 rounded-full hover:bg-white hover:text-primary hover:border-primary border transition cursor-pointer"
-              >
-                Log in
-              </button>
+              <CommonButton text="Log in" />
 
               {/* Signup Link */}
               <p className="text-center text-secondary text-sm lg:text-base mt-3">

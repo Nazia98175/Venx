@@ -5,7 +5,7 @@ const resetpassword = () => {
   return (
     <>
       <div className="">
-        <div className="flex min-h-screen items-center justify-between bg-tertiary">
+        <div className="flex min-h-screen items-center justify-between bg-white">
           <div className="max-w-full w-full items-center flex justify-center">
             <svg
               width="546"
