@@ -46,6 +46,9 @@ const OTP = () => {
     setTimeLeft(60);
     inputRefs.current[0]?.focus();
   };
+  const handleSubmit = () => {
+    router.push("/resetpassword");
+  };
   return (
     <div className="max-w-full">
       <div className="h-[810px] bg-primary flex justify-center items-center min-h-screen w-full font-inter">
@@ -77,10 +80,7 @@ const OTP = () => {
 
             {/* Verify Button */}
 
-            <CommonButton
-              onClick={() => router.push("/resetpassword")}
-              text="Submit"
-            />
+            <CommonButton onClick={handleSubmit} text="Submit" />
 
             {/* Resend OTP */}
             <p className="text-secondary mt-4 text-center">

@@ -34,7 +34,7 @@ const CreateAccount = () => {
       alert("Account created successfully!");
       // Here, you can send data to your backend API
     }
-    router.push("/");
+    router.push("/dashboard");
   };
   return (
     <div className="max-w-full">

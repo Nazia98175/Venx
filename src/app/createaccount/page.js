@@ -1,9 +1,6 @@
 import React from "react";
 import CreateAccount from "../components/auth/CreateAccount";
-import {
-  CreateAccountIllustration,
-  LoginIllustration,
-} from "../components/common/illustrationSvgs";
+import { CreateAccountIllustration } from "../components/common/illustrationSvgs";
 
 const CreateAccountPage = () => {
   return (

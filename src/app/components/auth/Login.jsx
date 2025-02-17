@@ -5,8 +5,10 @@ import { useRef, useState } from "react";
 import CommonButton from "../common/CommonButton";
 import CommonInput from "../common/CommonInput";
 import CommonLogo from "../common/CommonLogo";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     username: "",
@@ -32,6 +34,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Login Data:", formData);
+    router.push("/dashboard");
   };
 
   return (
