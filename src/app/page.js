@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <>
       <div className=" grid lg:grid-cols-2 min-h-screen bg-white">
-        <div className=" items-center max-w-full min-h-screen flex justify-center">
-          <LoginIllustration />
+        <div className=" items-center max-w-full min-h-screen lg:flex hidden justify-center ">
+          <LoginIllustration className="" />
         </div>
         <Login />
       </div>

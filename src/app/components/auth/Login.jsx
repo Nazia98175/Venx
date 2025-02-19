@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import CommonButton from "../common/CommonButton";
 import CommonInput from "../common/CommonInput";
 import CommonLogo from "../common/CommonLogo";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 const Login = () => {
   const router = useRouter();
@@ -39,7 +40,7 @@ const Login = () => {
 
   return (
     <div className="max-w-full">
-      <div className="h-[810px] bg-primary flex justify-center items-center min-h-screen w-full font-inter">
+      <div className="h-[810px]  bg-primary px-5 lg:px-0 flex justify-center items-center min-h-screen w-full font-inter">
         <div className="bg-white p-10 w-[489px] h-[515px] flex flex-col justify-center  rounded-2xl shadow-lg relative">
           {/* Logo */}
           <CommonLogo />
@@ -47,7 +48,6 @@ const Login = () => {
             <h2 className="text-center text-2xl lg:text-3xl font-semibold text-primary mb-4 font-inter">
               Welcome back!
             </h2>
-
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4 h-[324px]">
               {/* Username */}
@@ -64,7 +64,6 @@ const Login = () => {
                   className="w-full px-4 py-2 border border-quatanery rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
-
               {/* Password */}
               <div className="relative">
                 <label className="text-secondary flex justify-between items-center font-normal text-base lg:text-lg font-inter">
@@ -94,7 +93,6 @@ const Login = () => {
                   </button>
                 </div>
               </div>
-
               {/* Remember Me */}
               <div className="flex items-center">
                 <input
@@ -108,10 +106,10 @@ const Login = () => {
                   Remember me
                 </label>
               </div>
-
               {/* Login Button */}
-              <CommonButton text="Log in" />
-
+              <Button variant="default" size="default">
+                Log in
+              </Button>
               {/* Signup Link */}
               <p className="text-center text-secondary text-sm lg:text-base mt-3">
                 Don’t have an account?{" "}
