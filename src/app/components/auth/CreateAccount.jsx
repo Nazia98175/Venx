@@ -38,8 +38,8 @@ const CreateAccount = () => {
   };
   return (
     <div className="max-w-full">
-      <div className="h-[1060px] bg-primary flex justify-center items-center min-h-screen w-full font-inter">
-        <div className="bg-white p-10 w-[489px] h-[856px] flex flex-col justify-center  rounded-2xl shadow-lg relative">
+      <div className="h-[1060px] bg-primary px-5 lg:px-0 flex justify-center items-center min-h-screen w-full font-inter">
+        <div className="bg-white p-5 lg:p-10 w-[489px] h-[856px] flex flex-col justify-center  rounded-2xl shadow-lg relative">
           {/* Logo */}
           <CommonLogo />
           <div className="h-[730px] pt-10">

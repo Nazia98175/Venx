@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import CommonLogo from "../common/CommonLogo";
 import CommonInput from "../common/CommonInput";
 import CommonButton from "../common/CommonButton";
+import { Button } from "@/components/ui/button";
 
 const ResetPassword = () => {
   const router = useRouter();
@@ -25,8 +26,8 @@ const ResetPassword = () => {
   };
   return (
     <div className="max-w-full">
-      <div className="h-[810px] bg-primary flex justify-center items-center min-h-screen w-full font-inter">
-        <div className="bg-white p-10 w-[489px] h-[444px] flex flex-col justify-center  rounded-2xl shadow-lg relative">
+      <div className="h-screen bg-primary px-5 lg:px-0 flex justify-center items-center min-h-screen w-full font-inter">
+        <div className="bg-white p-5 lg:p-10 w-[489px] h-[515px] flex flex-col justify-center  rounded-2xl shadow-lg relative">
           {/* Logo */}
           <CommonLogo />
           <div className="h-[317px] pt-10">
@@ -79,7 +80,9 @@ const ResetPassword = () => {
               {error && <p className="text-red-500 text-base">{error}</p>}
 
               {/* Login Button */}
-              <CommonButton text="Submit" />
+              <Button variant="default" size="default">
+                Submit
+              </Button>
 
               {/* Signup Link */}
             </form>
